@@ -12,15 +12,16 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Beli</title>
+	<title><?php echo $p->product_name ?></title>
 	<link rel="stylesheet" type="text/css" href="css/style.css?v=<?php echo time(); ?>">
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 	<!-- header -->
 	<header>
 		<div class="container">
-		<img class="logo" src="img/logo.svg" onclick="location.href='index.php'">
+		<h1 onclick="location.href='index.php'">PetsQu Shop</h1>
 			<ul>
 				<li><a href="produk.php">Produk</a></li>
 				<li><a href="tentang.php">Tentang</a></li>
@@ -60,12 +61,12 @@
 						<ion-icon name="logo-whatsapp"></ion-icon>
 						</a>
 					</button>
-					<button>
+					<!-- <button>
 						<a href="https://api.whatsapp.com/send?phone=<?php echo $a->admin_telp ?>&text=Hai, saya tertarik dengan produk Anda." target="_blank" class="grab">
 						Pesan via 
 						<ion-icon src="img/grab.svg"></ion-icon>
 						</a>
-					</button>
+					</button> -->
 				</div>
 			</div>
 		</div>
@@ -82,7 +83,7 @@
 
 			<h4>No. Hp</h4>
 			<p><?php echo $a->admin_telp ?></p>
-			<small>Copyright &copy; 2020 - Bukawarung.</small>
+			<small>Copyright &copy; 2022 - PetsQu Shop.</small>
 		</div>
 	</div>
 

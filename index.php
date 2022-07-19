@@ -8,7 +8,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Pancong Lumer Texas JB</title>
+	<title>PetsQu Shop</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css?v=<?php echo time(); ?>">
 	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
@@ -19,11 +19,13 @@
 	<!-- Navbar -->
 	<header>
 		<div class="container">
-			<img class="logo" src="img/logo.svg" onclick="location.href='index.php'">
+			<!-- <img class="logo" src="img/logo.svg" onclick="location.href='index.php'"> -->
 			
+			<h1 onclick="location.href='index.php'">PetsQu Shop</h1>
+
 			<ul>
 				<li><a href="produk.php">Produk</a></li>
-				<li><a href="tentang.php">Tentang</a></li>
+				<!-- <li><a href="tentang.php">Tentang</a></li> -->
 				<Button class="btn" onclick="location.href='login.php'">Login</Button>
 			</ul>
 
@@ -51,12 +53,12 @@
 	 -->
 	<!-- Jumbotron -->
 	<section class="JumboTron">
-		<img src="img/logo.svg" class="logo-jumbo-tron">
+		<!-- <img src="img/logo.svg" class="logo-jumbo-tron"> -->
         <div class="text-box">
-            <h1>Pancong Lumer Texas JB</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro id numquam, saepe quas repellat libero.
+            <h1>PetsQu Shop</h1>
+            <p>Pet Shop paling terpercaya se Jawa Barat
             </p>
-            <a href="produk.php" class="hero-btn">Pesan Sekarang</a>
+            <a href="produk.php" class="hero-btn">Beli Sekarang</a>
         </div>
     </section>
 
@@ -129,7 +131,7 @@
 
 			<h4>No. Hp</h4>
 			<p><?php echo $a->admin_telp ?></p>
-			<small>Copyright &copy; 2021 - Gunadarma</small>
+			<small>Copyright &copy; 2022 - PetsQu Shop.</small>
 		</div>
 	</div>
 

@@ -1,5 +1,11 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+
 .bg-login {
     display: flex;
+    flex-direction: column;
     height: 95vh;
     justify-content: center;
     align-items: center;
@@ -16,6 +22,7 @@
     padding: 20px;
     box-sizing: border-box;
     border-radius: 20px;
+    margin-bottom: 40px;
 }
 
 .containerLogin {
@@ -59,4 +66,14 @@
     box-sizing: border-box;
     border-radius: 7px;
     border: 1px solid gray;
+}
+
+img {
+    margin-bottom: 50px;
+    width:100px;
+}
+@media (min-width: 768px) {
+    img {
+        margin-bottom: 60px;
+    }
 }

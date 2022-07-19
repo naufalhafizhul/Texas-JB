@@ -4,19 +4,13 @@
 	if($_SESSION['status_login'] != true){
 		echo '<script>window.location="login.php"</script>';
 	}
-
-	$kategori = mysqli_query($conn, "SELECT * FROM tb_category WHERE category_id = '".$_GET['id']."' ");
-	if(mysqli_num_rows($kategori) == 0){
-		echo '<script>window.location="dashboard.php"</script>';
-	}
-	$k = mysqli_fetch_object($kategori);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Edit Kategori</title>
+	<title>Tambah Admin Baru</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css?v=<?php echo time(); ?>">
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -39,38 +33,52 @@
 	<!-- content -->
 	<div class="section">
 		<div class="container">
-			<h3>Edit Data Kategori</h3>
+			<h3>Tambah Admin Baru</h3>
 			<div class="box">
 				<form action="" method="POST">
-					<input type="text" name="nama" placeholder="Nama Kategori" class="input-control" value="<?php echo $k->category_name ?>" required>
-					<input type="submit" name="submit" value="Submit" class="btn">
+					<input type="text" name="nama" placeholder="Nama Lengkap" class="input-control" value="" required>
+					<input type="text" name="user" placeholder="Username" class="input-control" value="" required>
+                    <input type="password" name="password" placeholder="Password" class="input-control" value="" required>
+					<input type="text" name="hp" placeholder="No Hp" class="input-control" value="" required>
+					<input type="email" name="email" placeholder="Email" class="input-control" value="" required>
+					<input type="text" name="alamat" placeholder="Alamat" class="input-control" value="" required>
+					<input type="submit" name="submit" value="Tambah Admin" class="tmbh-btn" style="margin-top: 0;">
 				</form>
 				<?php 
 					if(isset($_POST['submit'])){
 
-						$nama = ucwords($_POST['nama']);
+						$nama 	= ucwords($_POST['nama']);
+						$user 	= $_POST['user'];
+                        $password = $_POST['password'];
+						$hp 	= $_POST['hp'];
+						$email 	= $_POST['email'];
+						$alamat = ucwords($_POST['alamat']);
 
-						$update = mysqli_query($conn, "UPDATE tb_category SET 
-												category_name = '".$nama."'
-												WHERE category_id = '".$k->category_id."' ");
-
-						if($update){
-							echo '<script>alert("Edit data berhasil")</script>';
+						$insert = mysqli_query($conn, "INSERT INTO tb_admin VALUE(
+                                        null,
+										'".$nama."',
+										'".$user."',
+                                        '".$password."',
+										'".$hp."',
+										'".$email."',
+										'".$alamat."'
+										 )"
+                                    );
+						if($insert){
+							echo '<script>alert("Berhasil Menambah Admin")</script>';
 							echo '<script>window.location="dashboard.php"</script>';
 						}else{
 							echo 'gagal '.mysqli_error($conn);
 						}
+
 					}
 				?>
 			</div>
-		</div>
-	</div>
-
-	<!-- footer -->
-	<footer>
+        </div>
+    </div>
+    <footer>
 		<div class="container">
 			<small>Copyright &copy; 2022 - PetsQu Shop</small>
 		</div>
 	</footer>
 </body>
-</html>

@@ -7,7 +7,7 @@
 
 	$produk = mysqli_query($conn, "SELECT * FROM tb_product WHERE product_id = '".$_GET['id']."' ");
 	if(mysqli_num_rows($produk) == 0){
-		echo '<script>window.location="data-produk.php"</script>';
+		echo '<script>window.location="dashboard.php"</script>';
 	}
 	$p = mysqli_fetch_object($produk);
 ?>
@@ -16,21 +16,22 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Bukawarung</title>
+	<title>PetsQu Shop</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css?v=<?php echo time(); ?>">
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 </head>
 <body>
 	<!-- header -->
 	<header>
 		<div class="container">
-			<h1><a href="dashboard.php">Bukawarung</a></h1>
+			<h1 onclick="location.href='dashboard.php'">PetsQu Shop</h1>
 			<ul>
-				<li><a href="dashboard.php">Dashboard</a></li>
+				<!-- <li><a href="dashboard.php">Dashboard</a></li> -->
 				<li><a href="profil.php">Profil</a></li>
-				<li><a href="data-kategori.php">Data Kategori</a></li>
-				<li><a href="data-produk.php">Data Produk</a></li>
+				<!-- <li><a href="data-kategori.php">Data Kategori</a></li>
+				<li><a href="data-produk.php">Data Produk</a></li> -->
 				<li><button class="keluar-btn" onclick="location.href='keluar.php'">Keluar</button></li>
 			</ul>
 		</div>
@@ -96,7 +97,7 @@
 							// validasi format file
 							if(!in_array($type2, $tipe_diizinkan)){
 								// jika format file tidak ada di dalam tipe diizinkan
-								echo '<script>alert("Format file tidak diizinkan")</scrtip>';
+								echo '<script>alert("Format file tidak diizinkan")</script>';
 
 							}else{
 								unlink('./produk/'.$foto);
@@ -121,7 +122,7 @@
 												WHERE product_id = '".$p->product_id."'	");
 						if($update){
 							echo '<script>alert("Ubah data berhasil")</script>';
-							echo '<script>window.location="data-produk.php"</script>';
+							echo '<script>window.location="dashboard.php"</script>';
 						}else{
 							echo 'gagal '.mysqli_error($conn);
 						}
@@ -135,7 +136,7 @@
 	<!-- footer -->
 	<footer>
 		<div class="container">
-			<small>Copyright &copy; 2020 - Bukawarung.</small>
+			<small>Copyright &copy; 2022 - PetsQu Shop</small>
 		</div>
 	</footer>
 	<script>

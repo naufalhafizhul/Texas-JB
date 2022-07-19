@@ -9,18 +9,19 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Bukawarung</title>
+	<title>Produk | PetsQu Shop</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css?v=<?php echo time(); ?>">
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 	<!-- header -->
 	<header>
 		<div class="container">
-		<img class="logo" src="img/logo.svg" onclick="location.href='index.php'">
+		<h1 onclick="location.href='index.php'">PetsQu Shop</h1>
 			<ul>
 				<li><a href="produk.php">Produk</a></li>
-				<li><a href="tentang.php">Tentang</a></li>
+				<!-- <li><a href="tentang.php">Tentang</a></li> -->
 				<Button class="btn" onclick="location.href='login.php'">Login</Button>
 			</ul>
 		</div>
@@ -44,7 +45,7 @@
 			<div class="box">
 				<?php 
 					if($_GET['search'] != '' || $_GET['kat'] != ''){
-						$where = "AND product_name LIKE '%".$_GET['search']."%' AND category_id LIKE '%".$_GET['kat']."%' ";
+						$where = "AND product_name LIKE '%".$_GET['search']."%' AND category_id LIKE '".$_GET['kat']."' ";
 					}
 
 					$produk = mysqli_query($conn, "SELECT * FROM tb_product WHERE product_status = 1 $where ORDER BY product_id DESC");
@@ -76,7 +77,7 @@
 
 			<h4>No. Hp</h4>
 			<p><?php echo $a->admin_telp ?></p>
-			<small>Copyright &copy; 2020 - Bukawarung.</small>
+			<small>Copyright &copy; 2022 - PetsQu Shop.</small>
 		</div>
 	</div>
 </body>

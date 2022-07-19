@@ -10,15 +10,16 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Bukawarung</title>
+	<title>Pancong Lumer Texas JB</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css?v=<?php echo time(); ?>">
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 	<!-- header -->
 	<header>
 		<div class="container">
-			<h1><a href="dashboard.php">Bukawarung</a></h1>
+			<h1><a href="dashboard.php">Pancong Lumer Texas JB</a></h1>
 			<ul>
 				<li><a href="dashboard.php">Dashboard</a></li>
 				<li><a href="profil.php">Profil</a></li>
@@ -71,7 +72,7 @@
 	<!-- footer -->
 	<footer>
 		<div class="container">
-			<small>Copyright &copy; 2020 - Bukawarung.</small>
+			<small>Copyright &copy; 2022 - PetsQu Shop</small>
 		</div>
 	</footer>
 </body>
